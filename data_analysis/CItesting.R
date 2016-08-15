@@ -1,3 +1,9 @@
+# Part of the code used in:
+# Weitz et al. Lysis, Lysogeny, and Virus-Microbe Ratios
+# 
+# From https://github.com/WeitzGroup/VMR-Lysis-Lysogeny-v2
+# MIT License
+
 
 CItesting <- function(DATA,SEED,SAMPLES,TextInterest) {
 
@@ -158,19 +164,18 @@ CItesting <- function(DATA,SEED,SAMPLES,TextInterest) {
 	
 
 	ZEROS = rbind(0,0,0,OZ1,OZ2,OZ3,OZ4,Z1,Z2,Z3,Z4,Z5,Z6)
-	EXACT=rbind(O1[[1]][1,],O2[[1]][1,],O3[[1]][1,],B1[[1]][2,],B2[[1]][2,],B3[[1]][2,],B4[[1]][2,],A1[[1]][2,],A2[[1]][2,],A3[[1]][2,],A4[[1]][2,],A5[[1]][2,],A6[[1]][2,])
+	CIcombined=rbind(O1[[1]][1,],O2[[1]][1,],O3[[1]][1,],B1[[1]][2,],B2[[1]][2,],B3[[1]][2,],B4[[1]][2,],A1[[1]][2,],A2[[1]][2,],A3[[1]][2,],A4[[1]][2,],A5[[1]][2,],A6[[1]][2,])
 	SAMSIZE = rbind(O1$SampleSize,O2$SampleSize,O3$SampleSize,B1$SampleSize,B2$SampleSize,B3$SampleSize,B4$SampleSize,A1$SampleSize,A2$SampleSize,A3$SampleSize,A4$SampleSize,A5$SampleSize,A6$SampleSize)
 
 	### save the data ###
 	
-	OUT = cbind(ZEROS,SAMSIZE,EXACT)
+	OUT = cbind(ZEROS,SAMSIZE,CIcombined)
 	colnames(OUT)=c("Zeros","sample size","CI 2.5%","CI 97.5%")
-
-	SaveOutput = round(OUT,2)
+	rownames(OUT)=names
+	SaveOutput = OUT
 	
-	save.image(file=paste(TextInterest,".Rdata",sep="")) #save as an R data file
 	
-	write.csv(SaveOutput, file = paste(TextInterest,".csv",sep="")) #save the rounded version as csv.
+	write.csv(SaveOutput, file = paste(TextInterest,".csv",sep="")) #save as csv.
 
 }
 
@@ -259,5 +264,3 @@ newWelsh <- function(data){
 		A=lmrob(Interest ~ log10(Cells), data, psi="welsh",method="MM")
 		return( c(A$coefficients, A$converged) )
 	}
-
-

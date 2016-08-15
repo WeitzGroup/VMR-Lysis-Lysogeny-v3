@@ -1,12 +1,11 @@
-
 # Part of the code used in:
 # Weitz et al. Lysis, Lysogeny, and Virus-Microbe Ratios
 # 
-# From https://github.com/WeitzGroup/VMR-Lysis-Lysogeny
+# From https://github.com/WeitzGroup/VMR-Lysis-Lysogeny-v2
 # MIT License
 
 
-##  R file for reanalysis of Knowles et al. 2016 figure S4a: Microbial cells vs. % prophage-like reads
+##  R file for analysis of Knowles et al. 2016 virome hallmark genes in figures 4a,b and S4a
 
 
 ### Dependencies ###
@@ -61,18 +60,17 @@ library(robustbase) # required for robust regression
 	SEED = 1
 
 #Check log10(Microbial Cells) ~ Provirus like reads -- output is saved to PProphage.Rdata and presented in PProphage.csv
+print("Checking log10(Microbial Cells) ~ Provirus like reads")
 DATA$Interest = DATA$PProphage
 CItesting(DATA,SEED,SAMPLES,"PProphage")
 
 #Check log10(Microbial Cells) ~ Integrase -- output is saved to Integrase.Rdata and presented in Integrase.csv
+print("Checking log10(Microbial Cells) ~ Integrase")
 DATA$Interest = DATA$Integrase
 CItesting(DATA,SEED,SAMPLES,"Integrase")
 
 #Check log10(Microbial Cells) ~ Excisionase -- output is saved to Excisionase.Rdata and presented in Excisionase.csv
+print("Checking log10(Microbial Cells) ~ Excisionase")
 DATA$Interest = DATA$Excisionase
 CItesting(DATA,SEED,SAMPLES,"Excisionase")
-
-
-
-
 
