@@ -27,6 +27,33 @@ library(robustbase) # required for robust regression
 #  http://CRAN.R-project.org/package=robustbase
 
 
+### Check session information ###
+
+print(sessionInfo()) #displays information about R session and packages
+#My output is:
+
+#R version 3.3.1 (2016-06-21)
+#Platform: x86_64-pc-linux-gnu (64-bit)
+#Running under: Ubuntu 14.04.5 LTS
+
+#locale:
+# [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+# [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+# [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+# [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+# [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+#[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+#attached base packages:
+#[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+#other attached packages:
+#[1] robustbase_0.92-6 MASS_7.3-45       resample_0.4     
+
+#loaded via a namespace (and not attached):
+#[1] DEoptimR_1.0-6 tools_3.3.1  
+
+
 
 ### Import data ###
 
