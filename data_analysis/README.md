@@ -16,6 +16,11 @@ Similarly, the data  used by **Extended Figure 4a** should be placed within this
 
 ## Analysis
 
+#1:
+ * *viromePanel.R*   &nbsp; - &nbsp;   script to plot the lysogeny hallmark gene relationships presented in Knowles et al. This script creates Figure 1 in our manuscript.
+
+
+#2:
  * *DataAnalysis.R*   &nbsp; - &nbsp;   script to load and prepare data for analysis using bootstrap methods
  * *CItesting.R*   &nbsp; - &nbsp;   function called by DataAnalysis.R to perform bootstrap analysis and return confidence intervals
 
