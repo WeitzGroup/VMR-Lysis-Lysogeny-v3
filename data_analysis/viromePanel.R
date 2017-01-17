@@ -42,7 +42,6 @@ INT_MODEL=lm(Integrase ~ log10(Cells), data=DATA)
 INT_SUM = summary(INT_MODEL)
 INT_Rsq = INT_SUM$r.squared
 INT_pval = pf(INT_SUM$fstatistic[1],INT_SUM$fstatistic[2],INT_SUM$fstatistic[3],lower.tail=FALSE)  #gives same p-value as shown in summary(PP_MODEL)
-PP_FIT = coef(PP_MODEL)[1] + coef(PP_MODEL)[2]*log10(DATA$Cells)
 INT_FIT = coef(INT_MODEL)[1] + coef(INT_MODEL)[2]*log10(DATA$Cells)
 
 #excisionase reads vs. log10(Cells)
@@ -50,7 +49,6 @@ EXC_MODEL=lm(Excisionase ~ log10(Cells), data=DATA)
 EXC_SUM = summary(EXC_MODEL)
 EXC_Rsq = EXC_SUM$r.squared
 EXC_pval = pf(EXC_SUM$fstatistic[1],EXC_SUM$fstatistic[2],EXC_SUM$fstatistic[3],lower.tail=FALSE) #gives same p-value as shown in summary(PP_MODEL)
-PP_FIT = coef(PP_MODEL)[1] + coef(PP_MODEL)[2]*log10(DATA$Cells)
 EXC_FIT = coef(EXC_MODEL)[1] + coef(EXC_MODEL)[2]*log10(DATA$Cells)
 
 
