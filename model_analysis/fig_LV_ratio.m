@@ -1,7 +1,7 @@
 % Part of the code used in:
 % Weitz et al. Lysis, Lysogeny, and Virus-Microbe Ratios
 % 
-% From https://github.com/WeitzGroup/VMR-Lysis-Lysogeny-v2
+% From https://github.com/WeitzGroup/VMR-Lysis-Lysogeny-v3
 % MIT License
 
 clf;

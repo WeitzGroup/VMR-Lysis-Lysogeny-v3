@@ -4,7 +4,7 @@ Model evaluation
 =============================
 
 
-Three models are considered in the paper. Latin hypercube sampling was performed to find 10,000 sets of parameters (within reasonable biological ranges) for each model. The corresponding steady state densities found using each of these parameter sets for microbial hosts and their viruses are then plotted. These are shown in Figure 1 of Weitz et al. (In submission). To recreate each of the subplots showing the relationship between the virus-to-microbe ratio (VMR) and microbial density at steady state for a particular model run each of the corresponding MATLAB files:
+Three models are considered in the paper. Latin hypercube sampling was performed to find 10,000 sets of parameters (within reasonable biological ranges) for each model. The corresponding steady state densities found using each of these parameter sets for microbial hosts and their viruses are then plotted. These are shown in Figure S1 of Weitz et al. (In submission). To recreate each of the subplots showing the relationship between the virus-to-microbe ratio (VMR) and microbial density at steady state for a particular model run each of the corresponding MATLAB files:
 
 <br><br>
 
