@@ -11,9 +11,9 @@
 ### Dependencies ###
 
 
-library(resample)  # required for bootstrap sampling
-# Tim Hesterberg (2015). resample: Resampling Functions. R package
-#  version 0.4. https://CRAN.R-project.org/package=resample
+library(boot) # required for bootstrap sampling
+# Angelo Canty and Brian Ripley (2016). boot: Bootstrap R (S-Plus) Functions. R package version 1.3-18.
+# Davison, A. C. & Hinkley, D. V. (1997) Bootstrap Methods and Their Applications. Cambridge University Press, Cambridge. ISBN 0-521-57391-2
 
 library(MASS)  # requried for robust regression
 # Venables, W. N. & Ripley, B. D. (2002) Modern Applied Statistics with
@@ -31,10 +31,9 @@ library(robustbase) # required for robust regression
 
 print(sessionInfo()) #displays information about R session and packages
 #My output is:
-
 #R version 3.3.1 (2016-06-21)
 #Platform: x86_64-pc-linux-gnu (64-bit)
-#Running under: Ubuntu 14.04.5 LTS
+#Running under: Ubuntu 16.04.1 LTS
 
 #locale:
 # [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
@@ -48,10 +47,11 @@ print(sessionInfo()) #displays information about R session and packages
 #[1] stats     graphics  grDevices utils     datasets  methods   base     
 
 #other attached packages:
-#[1] robustbase_0.92-6 MASS_7.3-45       resample_0.4     
+#[1] robustbase_0.92-6 MASS_7.3-45       boot_1.3-18      
 
 #loaded via a namespace (and not attached):
-#[1] DEoptimR_1.0-6 tools_3.3.1  
+#[1] DEoptimR_1.0-6
+
 
 
 
@@ -70,8 +70,8 @@ print(sessionInfo()) #displays information about R session and packages
 ### Prepare data for analysis ###
 
 
-	DATA = as.data.frame(cbind(data4$Microbes.per.ml,data4$X..integrase.reads,data4$X..excisionase.reads,data4$Functional.Diversity..H..,data4$X..pathogenicity.reads,dataSI4a$X..prophage.reads))
-	COLNAMES = c("Cells","Integrase","Excisionase","FuncDiv","Pathogenicity","PProphage")
+	DATA = as.data.frame(cbind(data4$Microbes.per.ml,data4$X..integrase.reads,data4$X..excisionase.reads,dataSI4a$X..prophage.reads))
+	COLNAMES = c("Cells","Integrase","Excisionase","PProphage")
 	colnames(DATA) = COLNAMES
 
 

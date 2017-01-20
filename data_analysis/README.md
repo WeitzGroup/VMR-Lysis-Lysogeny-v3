@@ -3,7 +3,7 @@ Virome evaluation
 =============================
 
 
-Virome data presented in Knowles et al. 2016 figure 4a, 4b and Extended figure 4a is evaluated using R (version 3.3.1) and packages *resample* (version 0.4), *MASS* (version 7.3-45) and *robustbase* (version 0.92-6).
+Virome data presented in Knowles et al. 2016 figure 4a, 4b and Extended figure 4a is evaluated using R (version 3.3.1) and packages *boot* (version 1.3-18), *MASS* (version 7.3-45) and *robustbase* (version 0.92-6).
 
 ## Data
 
@@ -38,6 +38,7 @@ The analysis for each dataset shown below returns a table displaying the method 
  * *Integrase.csv*   &nbsp; - &nbsp;   Table returning the results of the analysis for the relationship between log10(microbial abundance per ml) and percentage integrase reads in viromes
  * *Excisionase.csv*   &nbsp; - &nbsp;   Table returning the results of the analysis for the relationship between log10(microbial abundance per ml) and percentage excisionase reads in viromes
 
+within these tables *coefficient* details the relevant correlation or slope coefficient, *pval* is the corresponding p-value of that coefficient. *Zeros* indicates the number of datapoints (out of 24) that are downweighted by each robust regression technique to have 0 influence in the corresponding analysis. *bootstrap sample size* shows the number of bootstrap replicates which converged (of a possible 10,000) and are used to calculate 95% confidence intervals using the bootstrapped BCa (bias-corrected and accelerated) method (Efron, 1987) shown in the columns headed *bootstrap CI*.
 
 ###References
 
@@ -46,11 +47,15 @@ Knowles B. et al. 2016. Lytic to temperate switching of viral communities. *Natu
 
 R Core Team. 2016. R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria.  URL https://www.R-project.org/.
 
-Hesterberg T. 2015. resample: Resampling Functions. R package version 0.4. https://CRAN.R-project.org/package=resample
+Canty A, Ripley B. 2016. boot: Bootstrap R (S-Plus) Functions. R package version 1.3-18.
+
+Davidson A. C., Hinkley D. V. 1997. Bootstrap Methods and Their Applications. Cambridge University Press, Cambridge. ISBN 0-521-57391-2
 
 Venables W. N., Ripley B. D. 2002. Modern Applied Statistics with S. Fourth Edition. Springer, New York. ISBN 0-387-95457-0
 
 Rousseeuw P. et al. 2016. robustbase: Basic Robust Statistics. R  package version 0.92-6. URL  http://CRAN.R-project.org/package=robustbase
+
+Efron B. 1987. Better Bootstrap Confidence Intervals. Journal of the American Statistical Association, Vol. 82, No. 397, (Mar., 1987), pp. 171-185
 
 
 
